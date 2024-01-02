@@ -1,0 +1,13 @@
+<!-- app/views/pdf_documents/index.html.erb -->
+<h1>Lista de Documentos PDF</h1>
+
+<%= link_to 'Novo Documento', new_pdf_document_path, class: 'btn btn-primary' %>
+
+<% @pdf_documents.each do |pdf_document| %>
+  <div>
+    <h3><%= pdf_document.title %></h3>
+    <p>Autor: <%= pdf_document.author %></p>
+    <p>Data de Criação: <%= pdf_document.creation_date %></p>
+    <%= link_to 'Visualizar', pdf_document, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
